@@ -59,3 +59,19 @@ form label {
     color: #060606;
     font-weight: bold;
 }
+
+.login-page{
+
+    background-image: url('imagens/cerana.png');
+    background-repeat: no-repeat;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: 100%;
+}
