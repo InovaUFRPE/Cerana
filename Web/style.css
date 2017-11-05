@@ -8,6 +8,7 @@ form {
     font-size: 15px;
     background-color: rgba(200, 201, 204, 0.53);
     max-width: 500px;
+    margin: 20px auto;
 }
 
 h1 {
@@ -49,6 +50,8 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     -moz-border-radius: 5px;
     border: 1px solid;
     color: black;
+    margin-left: 190px;
+    margin-bottom: 10px;
 }
 
 form label {
