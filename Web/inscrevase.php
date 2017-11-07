@@ -46,7 +46,7 @@
 	    		<h3>Inscreva-se já.</h3>
 	    		<br />
 	    		<!-- forma de post os dados do usuario e como usando o action -->
-				<form method="post" action="registra_usuario.php" id="formCadastrarse">
+				<form method="post" action="registrar_usuario.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="requiored">
 					</div>
