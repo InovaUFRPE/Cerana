@@ -5,7 +5,7 @@
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM usuario WHERE user = '$usuario' AND senha = '$senha'";
+    $sql = "SELECT * FROM usuarios WHERE user = '$usuario' AND senha = '$senha'";
 
     $objDb = new db();
     $link = $objDb->conecta_mysql();
