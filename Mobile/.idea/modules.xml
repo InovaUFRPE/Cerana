@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mobile.iml" filepath="$PROJECT_DIR$/Mobile.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\vinic\Google Drive\workspace\Projects\Cerana\Mobile\Mobile.iml" filepath="C:\Users\vinic\Google Drive\workspace\Projects\Cerana\Mobile\Mobile.iml" />
+      <module fileurl="file://C:\Users\vinic\Google Drive\workspace\Projects\Cerana\Mobile\app\app.iml" filepath="C:\Users\vinic\Google Drive\workspace\Projects\Cerana\Mobile\app\app.iml" />
     </modules>
   </component>
 </project>
