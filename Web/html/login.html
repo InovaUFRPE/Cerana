@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="utf-8" />
+        <link href="../css/crud_style.css" rel="stylesheet" media="all" />
+        <script src="../js/crud_functions.js"></script>
+
+    </head>
+    <body>
+    <div class="module">
+        <div class="form_page">
+            <form class="form_cadastro" name="meu_form_cadastro">
+
+                <div class="logo_img">
+                    <img src="../imagens/cerana.png" class="cerana">
+                </div>
+
+
+                <div class="header_wrapper">
+                    <h1 class="title">Login</h1>
+                </div>
+
+
+                <div class="title_list">
+                    <p class="nome">
+                        <label class="nome_text" for="login_id">Nome Completo</label>
+                    </p>
+                    <p class="senha">
+                        <label class="senha_text" for="password_check_id">Senha</label>
+                    </p>
+                </div>
+                <div class="input_list">
+                    <p class="nome">
+                        <input class="login_input" type="text" id="login_id" placeholder="Nome Exemplo" required="required"
+                               name="nome" />
+                    </p>
+                    <p class="senha">
+                        <input class="password_check_input" type="password" id="password_check_id" placeholder="*******" required="required"
+                               name="senha" />
+                    </p>
+                </div>
+
+                <p class="submit">
+                    <input type="submit" onclick="login();" value="Cadastrar" />
+                </p>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

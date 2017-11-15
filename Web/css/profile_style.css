@@ -173,7 +173,8 @@ body{
 
 .perguntas_list_view .data,
 .perguntas_list_view .respostas {
-    max-width: 60px;
+    max-width: 60%;
+    text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
@@ -190,6 +191,9 @@ body{
 .perguntas_list_view td.data,
 .perguntas_list_view td.respostas {
     color: #a2a6af
+}
+.perguntas_list_view td.respostas{
+    text-align: center;
 }
 .title_list{
     float: left;
