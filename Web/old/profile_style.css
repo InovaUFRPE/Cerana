@@ -111,15 +111,30 @@ body{
     margin-bottom: 30px
 }
 
-/*.view_account .content_panel .content_header_wrapper .actions {*/
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*top: 0;*/
-    /*background-color: black;*/
-/*}*/
+.view_account .content_panel .content_header_wrapper .actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 
 .view_account .content_panel .content_header_wrapper .actions .btn_nova_questao {
-    position: absolute;
+    position: relative;
+    right: 0;
+    top: 0;
+    background-color: #f4ed92;
+    height: 40px;
+    width: 200px;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+    color: black;
+    text-align: center;
+    border-color: black;
+}
+.view_account .content_panel .content_header_wrapper .actions .btn_excluir {
+    position: relative;
     right: 0;
     top: 0;
     background-color: #f4ed92;
@@ -175,6 +190,17 @@ body{
 .perguntas_list_view td.data,
 .perguntas_list_view td.respostas {
     color: #a2a6af
+}
+.title_list{
+    float: left;
+    position: relative;
+}
+.title_list p {
+    padding-bottom: 5px;
+}
+.input_list{
+    float: right;
+    position: relative;
 }
 
 @media (max-width:767px) {
