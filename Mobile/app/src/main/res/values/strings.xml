@@ -31,4 +31,5 @@
     <string name="posts">Posts</string>
     <string name="bio">Escreva sobre você</string>
     <string name="editarPerfil">Editar perfil</string>
+    <string name="salvar">Salvar</string>
 </resources>

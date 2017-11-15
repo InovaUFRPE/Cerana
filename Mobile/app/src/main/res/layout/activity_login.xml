@@ -66,7 +66,7 @@
             style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="131dp"
             android:layout_height="36dp"
-            android:layout_marginLeft="115dp"
+            android:layout_marginLeft="126dp"
             android:layout_marginTop="25dp"
             android:background="@android:color/transparent"
             android:onClick="startCadastroActivity"
