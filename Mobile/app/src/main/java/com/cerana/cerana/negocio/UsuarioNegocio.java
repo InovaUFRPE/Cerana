@@ -72,6 +72,32 @@ public class UsuarioNegocio {
         }
     }
 
+    public boolean verificarTamanhoNome(String campo){
+        String texto = campo;
+        if (verEspacosBrancos(campo));
 
+        if  (texto.length() < 1 || texto.length() > 50){
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    public boolean verificarTamanhoBio(String campo){
+        String texto = campo;
+        if  (texto.length() < 1 || texto.length() > 100){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean verificarTamanhoLoc(String campo){
+        String texto = campo;
+        if  (texto.length() < 4 || texto.length() > 20){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

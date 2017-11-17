@@ -114,7 +114,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     public boolean isCamposValidos(String nome, String login, String senha, String senhaConfirma) {
         boolean verificador = false;
-        if (TextUtils.isEmpty(nome)) {
+        if (TextUtils.isEmpty(nome) || nome.trim().isEmpty()) {
             et_nome.requestFocus();
             et_nome.setError(resources.getString(R.string.error_campo_vazio));
         } else if (TextUtils.isEmpty(login)) {
