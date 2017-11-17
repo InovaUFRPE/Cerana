@@ -32,4 +32,5 @@
     <string name="bio">Escreva sobre você</string>
     <string name="editarPerfil">Editar perfil</string>
     <string name="salvar">Salvar</string>
+    <string name="btn_desativar">Desativar conta</string>
 </resources>
