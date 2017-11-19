@@ -46,7 +46,7 @@ form label {
 }
 
 .submit input {
-    background-color: #f4ed92;
+    background-color: #aedee4;
     height: 40px;
     width: 100px;
     font-weight: bold;
@@ -85,7 +85,7 @@ form label {
 .cerana{
     border: groove;
     border-width: 1px;
-    background: white;
+    background: #41afdc;
     width: 100px;
     height: 100px;
     border-radius: 50%;
