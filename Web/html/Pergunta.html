@@ -76,46 +76,30 @@
                                 </li>
                             </ul>
                             <div class="create_answer">
-                                <form class="answer_form">
-                                    <div class="nova_answer">
-                                        <div class="create_answer_tile">
-                                            <h2> Nova questao</h2>
-                                         </div>
-                                        <div class="title_list">
-                                            <p class="nome">
-                                                <label class="nome_text" for="et_nome">Nome Cientifico</label>
-                                            </p>
-                                            <p class="senha">
-                                                <label class="senha_text" for="et_password">Familia</label>
-                                            </p>
-                                            <p class="graduacao">
-                                                <label class="graduacao_text" for="et_graduacao">Filo</label>
-                                            </p>
+                                <div id="comment_form">
+                                    <div class="resposta_title">
+                                        <h2>Nova respostaa</h2>
+                                    </div>
+                                    <div class="resposta_info">
+                                        <div>
+                                            <input type="text" name="familia" id="familia=" placeholder="Familia">
                                         </div>
-                                        <div class="input_list">
-                                            <p class="nome">
-                                                <input class="nome_input" type="text" id="et_nome" placeholder="Nome Exemplo" required="required"
-                                                       name="nome" />
-                                            </p>
-                                            <p class="senha">
-                                                <input class="senha_input" type="password" id="et_password" placeholder="Familia" required="required"
-                                                       name="senha" />
-                                            </p>
-                                            <p class="graduacao">
-                                                <input class="graduacao_input" type="text" id="et_graduacao" placeholder="Filo"
-                                                       name="graduacao" />
-                                            </p>
-                                            <p>
-                                                <input class="submit_new_question" type="submit" value="Adivionar" />
-                                            </p>
+                                        <div>
+                                            <input type="text" name="filo" id="filo" value="" placeholder="Filo">
                                         </div>
-                                        <div class="abcd" >
-                                            <textarea>
-                                            </textarea>
+                                        <div>
+                                            <input type="text" name="n_cientifio" id="n_cientifico" value="" placeholder="Nome Cientifico">
                                         </div>
                                     </div>
 
-                                </form>
+                                    <div class="resposta_text">
+                                        <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
+                                    </div>
+                                    <div class="resposta_submit">
+                                        <input  type="submit" name="submit" value="Responder">
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>

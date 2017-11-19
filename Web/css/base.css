@@ -100,8 +100,6 @@ body{
     font-size: 18px
 }
 
-
-
 @media (max-width:767px) {
     .view_account .content_panel .title {
         text-align: center
