@@ -23,11 +23,17 @@
 
 
                 <div class="title_list">
+                    <p class="user">
+                        <label class="user_text" for="user_id">Usuário</label>
+                    </p>
                     <p class="nome">
                         <label class="nome_text" for="nome_id">Nome Completo</label>
                     </p>
                     <p class="senha">
                         <label class="senha_text" for="password_id">Senha</label>
+                    </p>
+                    <p class="senhaConfirm">
+                        <label class="senhaConfirm_text" for="passwordConfirm_id">Confirmar Senha</label>
                     </p>
                     <p class="graduacao">
                         <label class="graduacao_text" for="graduacao_id">Graduação</label>
@@ -37,13 +43,21 @@
                     </p>
                 </div>
                 <div class="input_list">
+                    <p class="user">
+                        <input class="user_input" type="text" id="user_id" placeholder="Usuário" required="required"
+                               name="user" />
+                    </p>
                     <p class="nome">
-                        <input class="nome_input" type="text" id="nome_id" placeholder="Nome Exemplo" required="required"
+                        <input class="nome_input" type="text" id="nome_id" placeholder="Nome" required="required"
                                name="nome" />
                     </p>
                     <p class="senha">
                         <input class="senha_input" type="password" id="password_id" placeholder="*******" required="required"
                                name="senha" />
+                    </p>
+                    <p class="senhaConfirm">
+                        <input class="senhaConfirm_input" type="password" id="passwordConfirm_id" placeholder="*******" required="required"
+                               name="senhaConfirm" />
                     </p>
                     <p class="graduacao">
                         <input class="graduacao_input" type="text" id="graduacao_id" placeholder="Bacharelado .."
