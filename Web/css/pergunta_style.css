@@ -99,6 +99,9 @@
 }
 
 .create_answer {
+    padding: 15px;
+    background: #f5f5f5;
+    overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .create_answer .resposta_info {
@@ -109,7 +112,7 @@
 .create_answer .resposta_text {
     margin: 15px;
 }
-.create_answer .resposta_submit input{
+.create_answer .resposta_submit {
     float: right;
     margin: 10px;
     position: relative;
@@ -128,4 +131,8 @@
     text-align: center;
     border-bottom: groove;
     border-width: 1px ;
+}
+.new_question_title {
+    margin-top: 10px;
+    width: 95%;
 }
