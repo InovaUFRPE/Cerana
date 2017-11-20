@@ -25,6 +25,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView tvNperguntas;
     private TextView tvTags;
     private ImageView imvPerfil;
+    private TextView tvBio;
 
     public static int IMAGE_GALLERY_REQUEST = 20;
 
@@ -38,7 +39,7 @@ public class PerfilActivity extends AppCompatActivity {
         tvNome = (TextView)findViewById(R.id.tv_nome);
         tvNperguntas = (TextView)findViewById(R.id.tv_perguntas);
         imvPerfil = (ImageView)findViewById(R.id.imv_perfil);
-
+        tvBio = (TextView) findViewById(R.id.tv_bio);
 
         sessaoUsuario = new SessaoUsuario(getApplicationContext());
         sessaoUsuario.iniciarSessao(getApplicationContext());
@@ -55,6 +56,7 @@ public class PerfilActivity extends AppCompatActivity {
         if (!(pessoa == null)){
             tvNome.setText(sessaoUsuario.getUsuarioLogado().getNome());
             tvNperguntas.setText("0");
+            tvBio.setText(sessaoUsuario.getUsuarioLogado().getDescricao());
 
         }
 
@@ -97,5 +99,9 @@ public class PerfilActivity extends AppCompatActivity {
         finish();
     }
 
+    public void startEditarPerfilActivity(View view){
+        startActivity(new Intent(this, EditarPerfilActivity.class));
+        finish();
+    }
 
 }

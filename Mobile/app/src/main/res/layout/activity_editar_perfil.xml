@@ -34,12 +34,13 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/screen_border"
         android:text="@string/salvar"
+        android:onClick="editar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.015" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -51,14 +52,14 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056"
+        app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@drawable/ic_perfil" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_editarNome"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -76,7 +77,7 @@
         app:layout_constraintVertical_bias="0.354" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_editarBio"
         android:layout_width="373dp"
         android:layout_height="46dp"
         android:layout_marginBottom="8dp"
