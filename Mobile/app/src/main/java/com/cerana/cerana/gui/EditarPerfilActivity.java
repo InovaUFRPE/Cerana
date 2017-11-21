@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -28,8 +29,8 @@ public class EditarPerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_perfil);
 
-        etEditarNome = (EditText)findViewById(R.id.et_editarNome);
-        etEditarBio = (EditText)findViewById(R.id.et_editarBio);
+        etEditarNome = (EditText) findViewById(R.id.et_editarNome);
+        etEditarBio = (EditText) findViewById(R.id.et_editarBio);
 
         sessaoUsuario = new SessaoUsuario(getApplicationContext());
         usuarioDao = new UsuarioDao(getApplicationContext());
@@ -40,20 +41,20 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
     }
 
-    public void initViews(){
+    public void initViews() {
         resources = (Resources) getResources();
-        TextWatcher textWatcher = new TextWatcher(){
+        TextWatcher textWatcher = new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count){
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
 
 
             @Override
-            public  void afterTextChanged(Editable s){
+            public void afterTextChanged(Editable s) {
 
             }
 
@@ -62,14 +63,26 @@ public class EditarPerfilActivity extends AppCompatActivity {
         etEditarBio.addTextChangedListener(textWatcher);
     }
 
-    public void editar(View v) throws Exception{
+    public void editar(View v) throws Exception {
         usuarioDao = new UsuarioDao(getApplicationContext());
         Pessoa pessoa = sessaoUsuario.getUsuarioLogado();
-        pessoa.setNome(etEditarNome.getText().toString());
-        pessoa.setDescricao(etEditarBio.getText().toString());
-        usuarioDao.atualizarRegistro(pessoa);
-        startActivity(new Intent(this, PerfilActivity.class));
-        finish();
+        if (!isCamposValidos(etEditarNome.getText().toString())) {
+            pessoa.setNome(etEditarNome.getText().toString());
+            pessoa.setDescricao(etEditarBio.getText().toString());
+            usuarioDao.atualizarRegistro(pessoa);
+            startActivity(new Intent(this, PerfilActivity.class));
+            finish();
+        }
+    }
+
+    public boolean isCamposValidos(String nome) {
+        boolean verificador = true;
+        if (TextUtils.isEmpty(nome) || nome.trim().isEmpty()) {
+            etEditarNome.requestFocus();
+            etEditarNome.setError(resources.getString(R.string.error_campo_vazio));
+        } else {
+            verificador = false;
+        }
+        return verificador;
     }
 }
-
