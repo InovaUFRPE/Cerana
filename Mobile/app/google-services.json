@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "823209712409",
+    "firebase_url": "https://projeto-cerana-bsi.firebaseio.com",
+    "project_id": "projeto-cerana-bsi",
+    "storage_bucket": "projeto-cerana-bsi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823209712409:android:1776145bdc05a6e3",
+        "android_client_info": {
+          "package_name": "com.cerana.cerana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823209712409-3l6hmqh05h2mkk7jaoqqth5dnmps370j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9l6SgtDM2nr0x2voGPp0svAEpWQ2wqkY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

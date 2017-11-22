@@ -3,24 +3,33 @@ package com.cerana.cerana.gui;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cerana.cerana.R;
+import com.cerana.cerana.dao.ConfiguracaoFirebase;
 import com.cerana.cerana.dominio.Usuario;
 import com.cerana.cerana.negocio.CriptografiaSenha;
 import com.cerana.cerana.negocio.SessaoUsuario;
 import com.cerana.cerana.negocio.UsuarioNegocio;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LogInActivity extends AppCompatActivity {
     private EditText et_login;
     private EditText et_password;
     private SessaoUsuario sessao;
+    private FirebaseAuth autenticacao;
+    private Usuario usuario;
 
     private Resources resources;
     private UsuarioNegocio usuarioNegocio;
@@ -73,7 +82,7 @@ public class LogInActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-
+    /*
     public void logar(View v) throws Exception {
         boolean validar=validarCampos();
         if(validar){
@@ -99,7 +108,7 @@ public class LogInActivity extends AppCompatActivity {
             }
         }
     }
-
+    */
     private boolean validarCampos(){
 
         String login = et_login.getText().toString();
@@ -123,6 +132,32 @@ public class LogInActivity extends AppCompatActivity {
             verificador = true;
         }
         return verificador;
+    }
+    private void validarLogin(){
+
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        autenticacao.signInWithEmailAndPassword(usuario.getLogin(),usuario.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+
+                    startMainActivity();
+                    Toast.makeText(LogInActivity.this, "Login efetuado com sucesso.", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(LogInActivity.this, "Usuário ou senha inválidos.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    public void logar(View v){
+        if (!et_login.getText().toString().equals("") && !et_password.getText().toString().equals("")) {
+            usuario = new Usuario();
+            usuario.setLogin(et_login.getText().toString());
+            usuario.setPassword(et_password.getText().toString());
+            validarLogin();
+        } else {
+            Toast.makeText(LogInActivity.this, "Preencha os campos de e-mail e senha!", Toast.LENGTH_LONG).show();
+        }
     }
 }
 
