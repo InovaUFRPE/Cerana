@@ -85,10 +85,10 @@ public class UsuarioNegocio {
 
     public boolean verificarTamanhoBio(String campo){
         String texto = campo;
-        if  (texto.length() < 1 || texto.length() > 100){
-            return false;
-        } else {
+        if  (texto.length() > 120){
             return true;
+        } else {
+            return false;
         }
     }
 

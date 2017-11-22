@@ -48,6 +48,7 @@ public class UsuarioDao {
         where = DbHelper.ID_PESSOA + "=" + pessoa.getId();
         valor = new ContentValues();
         valor.put(DbHelper.NOME, pessoa.getNome());
+        valor.put(DbHelper.DESCRICAO, pessoa.getDescricao());
 
 
         db.update(DbHelper.TABELA_PESSOA, valor, where, null);

@@ -29,8 +29,6 @@ public class SqlScripts {
         userBuilder.append("CREATE TABLE "+ TABELA_USUARIO +" ( ");
         userBuilder.append(ID_USER +" integer primary key autoincrement, ");
         userBuilder.append(USER+" text not null unique, ");
-        userBuilder.append(LOCATION+" text not null, ");
-        userBuilder.append(DESCRICAO+" text not null, ");
         userBuilder.append(PASSWORD+" text not null);");
         return userBuilder.toString();
     }
@@ -40,6 +38,8 @@ public class SqlScripts {
         pessoaBuilder.append("CREATE TABLE " + TABELA_PESSOA + " ( ");
         pessoaBuilder.append(ID_PESSOA + " integer primary key autoincrement, ");
         pessoaBuilder.append(NOME + " text not null, ");
+        pessoaBuilder.append(LOCATION+" text, ");
+        pessoaBuilder.append(DESCRICAO+" text, ");
         pessoaBuilder.append(PESSOA_USER + " text not null unique);");
         return pessoaBuilder.toString();
     }

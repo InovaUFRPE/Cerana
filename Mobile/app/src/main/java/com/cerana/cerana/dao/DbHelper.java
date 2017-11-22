@@ -6,21 +6,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHelper extends SQLiteOpenHelper {
     protected static final String NOME_DB = "banco.db";
-    protected static final int VERSAO = 2;
+    protected static final int VERSAO = 3;
     private SqlScripts scripts = new SqlScripts();
 
     // TABELA USUARIO
     protected static final String TABELA_USUARIO = "tabela_usuarios";
     protected static final String ID_USER = "_id_usuario";
     protected static final String USER = "user";
-    protected static final String PASSWORD = "password";
-    protected static final String LOCATION = "location";
     protected static final String DESCRICAO = "descricao";
 
     // TABELA PESSOA
     protected static final String TABELA_PESSOA = "tabela_pessoas";
     protected static final String ID_PESSOA = "_id_pessoa";
     protected static final String NOME = "nome";
+    protected static final String PASSWORD = "password";
+    protected static final String LOCATION = "location";
     protected static final String PESSOA_USER = "pessoa_usuario";
 
     //TABELA TOPICO

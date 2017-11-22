@@ -14,6 +14,7 @@ import com.cerana.cerana.R;
 import com.cerana.cerana.dao.UsuarioDao;
 import com.cerana.cerana.dominio.Pessoa;
 import com.cerana.cerana.negocio.SessaoUsuario;
+import com.cerana.cerana.negocio.UsuarioNegocio;
 
 public class EditarPerfilActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
     private SessaoUsuario sessaoUsuario;
     private UsuarioDao usuarioDao;
     private Resources resources;
+    private UsuarioNegocio usuarioNegocio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,8 @@ public class EditarPerfilActivity extends AppCompatActivity {
         Pessoa pessoa = sessaoUsuario.getUsuarioLogado();
         if (!isCamposValidos(etEditarNome.getText().toString())) {
             pessoa.setNome(etEditarNome.getText().toString());
+        }
+        if (!isBioValida(etEditarBio.getText().toString())){
             pessoa.setDescricao(etEditarBio.getText().toString());
             usuarioDao.atualizarRegistro(pessoa);
             startActivity(new Intent(this, PerfilActivity.class));
@@ -84,5 +88,18 @@ public class EditarPerfilActivity extends AppCompatActivity {
             verificador = false;
         }
         return verificador;
+    }
+
+    public boolean isBioValida(String bio){
+        usuarioNegocio = new UsuarioNegocio(getApplicationContext());
+        boolean verficador = true;
+        if(usuarioNegocio.verificarTamanhoBio(bio) == verficador){
+            etEditarBio.requestFocus();
+            etEditarBio.setError("Limite máximo de caracteres ultrapassado.");
+        }
+        else{
+            verficador = false;
+        }
+        return verficador;
     }
 }
