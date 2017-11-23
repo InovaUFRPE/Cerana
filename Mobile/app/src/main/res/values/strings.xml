@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Cerana</string>
     <string name="campo_nome">Nome</string>
-    <string name="campo_usuario">Usuário</string>
+    <string name="campo_usuario">E-mail</string>
     <string name="campo_senha">Senha</string>
     <string name="campo_confirmar_senha">Confimar senha</string>
     <string name="text_login">Entrar</string>

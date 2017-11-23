@@ -3,7 +3,7 @@ package com.cerana.cerana.negocio;
 import android.content.Context;
 import android.widget.Toast;
 
-
+/*
 import com.cerana.cerana.dao.UsuarioDao;
 import com.cerana.cerana.dominio.Pessoa;
 import com.cerana.cerana.dominio.Usuario;
@@ -63,3 +63,4 @@ public class UsuarioNegocio {
 
 
 }
+*/

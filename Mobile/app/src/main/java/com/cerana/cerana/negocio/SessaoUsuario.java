@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.cerana.cerana.dao.UsuarioDao;
+
 import com.cerana.cerana.dominio.Pessoa;
 import com.cerana.cerana.gui.LogInActivity;
 
-
+/*
 public class SessaoUsuario {
     private Pessoa usuarioLogado;
     private SharedPreferences preferences;
@@ -74,3 +74,4 @@ public class SessaoUsuario {
         return preferences.getBoolean(USUARIO_LOGADO, false);
     }
 }
+*/

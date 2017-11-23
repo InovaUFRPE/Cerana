@@ -8,20 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import com.cerana.cerana.R;
-import com.cerana.cerana.negocio.SessaoUsuario;
+
 
 public class TelaInicialActivity extends AppCompatActivity {
 
-        private SharedPreferences preferences;
-        private SessaoUsuario sessao;
-        private TextView boasVindas;
+    private SharedPreferences preferences;
+    /*private SessaoUsuario sessao;*/
+    private TextView boasVindas;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_tela_inicial);
-            bemVindo();
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tela_inicial);
+            /*bemVindo();*/
+    }
+}
+/*
     public void bemVindo(){
         preferences = getSharedPreferences("user", Context.MODE_APPEND);
         sessao = new SessaoUsuario(getApplicationContext());
@@ -35,3 +37,4 @@ public class TelaInicialActivity extends AppCompatActivity {
     }
 
 }
+*/

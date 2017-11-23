@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.cerana.cerana.dominio.Pessoa;
 import com.cerana.cerana.dominio.Usuario;
-import com.cerana.cerana.negocio.UsuarioNegocio;
 
 
+/*
 public class UsuarioDao {
     private SQLiteDatabase db;
     private DbHelper dataBaseHelper;
@@ -133,4 +133,5 @@ public class UsuarioDao {
         db.close();
     }
 }
+*/
 

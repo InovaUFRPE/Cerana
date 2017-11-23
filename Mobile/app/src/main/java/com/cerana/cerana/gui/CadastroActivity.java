@@ -3,27 +3,42 @@ package com.cerana.cerana.gui;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.cerana.cerana.Helper.Base64Custom;
+import com.cerana.cerana.Helper.Preferencias;
 import com.cerana.cerana.R;
+import com.cerana.cerana.dao.ConfiguracaoFirebase;
 import com.cerana.cerana.dominio.Pessoa;
 import com.cerana.cerana.dominio.Usuario;
 import com.cerana.cerana.negocio.CriptografiaSenha;
-import com.cerana.cerana.negocio.UsuarioNegocio;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthActionCodeException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class CadastroActivity extends AppCompatActivity {
-    private EditText et_user ;
-    private EditText et_password ;
-    private EditText et_password2 ;
-    private EditText et_nome ;
+    private EditText et_email;
+    private EditText et_password;
+    private EditText et_password2;
+    private EditText et_nome;
+    private Usuario usuario;
+    private FirebaseAuth autenticacao;
 
     private Resources resources;
-    private UsuarioNegocio usuarioNegocio;
+
     private CriptografiaSenha cripto;
 
     @Override
@@ -31,9 +46,9 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        usuarioNegocio = new UsuarioNegocio(getApplicationContext());
 
-        et_user = (EditText) findViewById(R.id.et_register_login);
+
+        et_email = (EditText) findViewById(R.id.et_register_login);
         et_password = (EditText) findViewById(R.id.et_register_password);
         et_password2 = (EditText) findViewById(R.id.et_register_password2);
         et_nome = (EditText) findViewById(R.id.et_register_nome);
@@ -58,30 +73,79 @@ public class CadastroActivity extends AppCompatActivity {
         };
 
         et_password.addTextChangedListener(textWatcher);
-        et_user.addTextChangedListener(textWatcher);
+        et_email.addTextChangedListener(textWatcher);
         et_nome.addTextChangedListener(textWatcher);
         et_password2.addTextChangedListener(textWatcher);
     }
 
-    public void cadastrar(View v) throws Exception{
-        boolean validar=validarCampos();
-        if(validar){
-            cripto = new CriptografiaSenha();
+    public void cadastrar(View v) {
+        if (et_password.getText().toString().equals(et_password2.getText().toString())) {
+            usuario = new Usuario();
+            usuario.setNome(et_nome.getText().toString());
+            usuario.setEmail(et_email.getText().toString());
+            usuario.setPassword(et_password.getText().toString());
 
-            Usuario usuario = new Usuario();
-            usuario.setLogin(et_user.getText().toString());
-            String novaSenha = cripto.criptoSenha(et_password.getText().toString());
-            usuario.setPassword(novaSenha);
+            cadastrarUsuario();
 
-            Pessoa pessoa = new Pessoa();
-            pessoa.setNome(et_nome.getText().toString());
-            pessoa.setUsuario(usuario);
-
-            usuarioNegocio.validarCadastro(pessoa);
-            iniciarLoginActivity();
+        } else {
+            Toast.makeText(CadastroActivity.this, "As senhas não são correspondentes.", Toast.LENGTH_LONG).show();
         }
     }
 
+    private void cadastrarUsuario() {
+
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        autenticacao.createUserWithEmailAndPassword(
+                usuario.getEmail(),
+                usuario.getPassword()
+        ).addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
+
+                    String identificadorUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                    FirebaseUser usuarioFirebase = task.getResult().getUser();
+                    usuario.setId(identificadorUsuario);
+                    usuario.salvar();
+
+                    Preferencias preferencias = new Preferencias(CadastroActivity.this);
+                    preferencias.salvarUsuarioPreferencias(identificadorUsuario, usuario.getNome());
+
+                    abrirLoginUsuario();
+                } else {
+                    String erroExcecao = "";
+
+                    try {
+                        throw task.getException();
+
+                    } catch (FirebaseAuthWeakPasswordException e) {
+                        erroExcecao = "Digite uma senha mais forte, contendo no mínimo 6 caracteres de letras e números";
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        erroExcecao = "O e-mail digitado é inválido, digite um novo e-mail";
+                    } catch (FirebaseAuthActionCodeException e) {
+                        erroExcecao = "Esse e-mail já está cadastrado no sistema";
+                    } catch (Exception e) {
+                        erroExcecao = "Erro ao efetuar o cadastro";
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(CadastroActivity.this, "Erro", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
+    }
+
+    public void abrirLoginUsuario() {
+        Intent intent = new Intent(CadastroActivity.this, LogInActivity.class);
+        startActivity(intent);
+        finish();
+    }
+}
+
+
+
+/*
     public void iniciarLoginActivity(){
         startActivity(new Intent(this, LogInActivity.class));
         finish();
@@ -156,4 +220,4 @@ public class CadastroActivity extends AppCompatActivity {
         return  verificador;
     }
 }
-
+*/

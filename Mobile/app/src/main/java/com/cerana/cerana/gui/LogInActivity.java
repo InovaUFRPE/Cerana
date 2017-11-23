@@ -16,8 +16,8 @@ import com.cerana.cerana.R;
 import com.cerana.cerana.dao.ConfiguracaoFirebase;
 import com.cerana.cerana.dominio.Usuario;
 import com.cerana.cerana.negocio.CriptografiaSenha;
-import com.cerana.cerana.negocio.SessaoUsuario;
-import com.cerana.cerana.negocio.UsuarioNegocio;
+
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,12 +27,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LogInActivity extends AppCompatActivity {
     private EditText et_login;
     private EditText et_password;
-    private SessaoUsuario sessao;
     private FirebaseAuth autenticacao;
     private Usuario usuario;
 
     private Resources resources;
-    private UsuarioNegocio usuarioNegocio;
+
     private CriptografiaSenha cripto;
 
     @Override
@@ -136,7 +135,7 @@ public class LogInActivity extends AppCompatActivity {
     private void validarLogin(){
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
-        autenticacao.signInWithEmailAndPassword(usuario.getLogin(),usuario.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        autenticacao.signInWithEmailAndPassword(usuario.getEmail(),usuario.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
@@ -152,7 +151,7 @@ public class LogInActivity extends AppCompatActivity {
     public void logar(View v){
         if (!et_login.getText().toString().equals("") && !et_password.getText().toString().equals("")) {
             usuario = new Usuario();
-            usuario.setLogin(et_login.getText().toString());
+            usuario.setEmail(et_login.getText().toString());
             usuario.setPassword(et_password.getText().toString());
             validarLogin();
         } else {
