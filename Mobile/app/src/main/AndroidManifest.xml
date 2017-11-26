@@ -24,7 +24,8 @@
         <activity android:name=".gui.CadastroActivity" />
         <activity android:name=".gui.TelaInicialActivity" />
         <activity android:name=".gui.PerfilActivity" />
-        <activity android:name=".gui.EditarPerfilActivity"></activity>
+        <activity android:name=".gui.EditarPerfilActivity" />
+        <activity android:name=".gui.CriarPublicacaoActivity"></activity>
     </application>
 
 </manifest>

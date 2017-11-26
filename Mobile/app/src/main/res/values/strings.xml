@@ -33,4 +33,9 @@
     <string name="editarPerfil">Editar perfil</string>
     <string name="salvar">Salvar</string>
     <string name="btn_desativar">Desativar conta</string>
+    <string name = "pergunta">Pergunta</string>
+    <string name="detalhes_pergunta">Detalhes (opcional)</string>
+    <string name="btn_pergunta">Perguntar</string>
+
+
 </resources>
