@@ -6,14 +6,9 @@ public class Pessoa{
     private String nome;
     private String localizazao;
     private String descricao;
+    private String userNome;
 
-    public Pessoa(){
-        this.nome = null;
-        this.usuario = null;
-        this.descricao = null;
-        this.localizazao = null;
 
-    }
     public int getId() {
         return id;
     }
@@ -47,4 +42,3 @@ public class Pessoa{
     public void setLocalizazao(String localizazao) {this.localizazao = localizazao; }
 
 }
-

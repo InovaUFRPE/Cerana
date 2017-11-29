@@ -118,6 +118,7 @@ public class UsuarioDao {
         Pessoa pessoa = new Pessoa();
         pessoa.setId(cursor.getShort(0));
         pessoa.setNome(cursor.getString(1));
+        pessoa.setDescricao(cursor.getString(3));
 
         return pessoa;
     }

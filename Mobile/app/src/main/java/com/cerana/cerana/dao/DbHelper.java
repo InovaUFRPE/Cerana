@@ -13,13 +13,13 @@ public class DbHelper extends SQLiteOpenHelper {
     protected static final String TABELA_USUARIO = "tabela_usuarios";
     protected static final String ID_USER = "_id_usuario";
     protected static final String USER = "user";
-    protected static final String DESCRICAO = "descricao";
+    protected static final String PASSWORD = "password";
 
     // TABELA PESSOA
     protected static final String TABELA_PESSOA = "tabela_pessoas";
     protected static final String ID_PESSOA = "_id_pessoa";
     protected static final String NOME = "nome";
-    protected static final String PASSWORD = "password";
+    protected static final String DESCRICAO = "descricao";
     protected static final String LOCATION = "location";
     protected static final String PESSOA_USER = "pessoa_usuario";
 

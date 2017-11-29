@@ -1,5 +1,6 @@
 package com.cerana.cerana.gui;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +23,7 @@ public class TelaInicialActivity extends AppCompatActivity {
             setContentView(R.layout.activity_tela_inicial);
             bemVindo();
         }
+    @SuppressLint("WrongConstant")
     public void bemVindo(){
         preferences = getSharedPreferences("user", Context.MODE_APPEND);
         sessao = new SessaoUsuario(getApplicationContext());

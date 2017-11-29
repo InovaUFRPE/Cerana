@@ -94,7 +94,7 @@ public class LogInActivity extends AppCompatActivity {
                 et_login.requestFocus();
                 et_login.setError(resources.getString(R.string.erro_valido_usuario_senha));
             }else {
-                sessao.logarUsuario(usuario);
+                sessao.logarUsuario(sessao);
                 startMainActivity();
             }
         }

@@ -36,17 +36,16 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+        sessaoUsuario = new SessaoUsuario(getApplicationContext());
+        sessaoUsuario.iniciarSessao(getApplicationContext());
+
         tvNome = (TextView)findViewById(R.id.tv_nome);
         tvNperguntas = (TextView)findViewById(R.id.tv_perguntas);
         imvPerfil = (ImageView)findViewById(R.id.imv_perfil);
         tvBio = (TextView) findViewById(R.id.tv_bio);
 
-        sessaoUsuario = new SessaoUsuario(getApplicationContext());
-        sessaoUsuario.iniciarSessao(getApplicationContext());
 
         setTextos();
-
-
     }
 
 

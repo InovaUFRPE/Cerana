@@ -32,9 +32,9 @@ public class SessaoUsuario {
         setUsuarioLogado(dao.buscarPessoa(usuario));
     }
 
-    public void logarUsuario(String nome) {
+    public void logarUsuario(SessaoUsuario sessaoUsuario) {
         editor.putBoolean(USUARIO_LOGADO, true);
-        editor.putString(NOME_USUARIO, nome);
+        editor.putString(NOME_USUARIO, sessaoUsuario.getNome());
         editor.apply();
     }
 
@@ -67,9 +67,11 @@ public class SessaoUsuario {
     public void setUsuarioLogado(Pessoa usuarioLogado) {
         this.usuarioLogado = usuarioLogado;
     }
+
     public String getNome() {
         return preferences.getString(NOME_USUARIO, null);
     }
+
     private boolean vericarSesssao() {
         return preferences.getBoolean(USUARIO_LOGADO, false);
     }
