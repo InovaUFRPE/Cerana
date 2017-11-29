@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nova Pergunta</title>
+        <link rel="stylesheet" href="../css/pergunta_style.css">
+        <link rel="stylesheet" href="../css/base.css">
+    </head>
+    <body>
+        <div class="container">
+        <div class="view_account">
+            <section class="module">
+                <div class="module_inner">
+                    <div class="side_bar">
+                        <div class="user_info">
+                            <img class="img_profile" src="../imagens/avatar.png" >
+                            <ul class="info_list">
+                                <li class="name" id="tv_nome_info">Pessoa</li>
+                                <li class="label label-info" id="tv_profissao_info">Profissao</li>
+                                <li class="email" id="tv_email_info">Email</li>
+
+                            </ul>
+                        </div>
+                        <nav class="side_menu">
+                            <ul class="navigation">
+                                <li><a href="../html/edit_profile.html"><span class="navigation_item">
+                                                </span>Editar</a></li>
+                                <li><a href="#"><span class="navigation_item"></span>Banco</a></li>
+                                <li><a href="#"><span class="navigation_item"></span>Perguntass</a></li>
+                                <li><a href="#"><span class="navigation_item"></span>Notificações</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="content_panel">
+                        <div class="content_header_wrapper">
+                            <h2 class="title">Nova Pergunta</h2>
+                        </div>
+                        <div class="create_answer">
+                            <div id="comment_form">
+                                <div class="resposta_title">
+                                    <h2><input class="new_question_title" type="text" name="titulo" id="Titulo" placeholder="Pergunta"></h2>
+                                </div>
+                                <div class="resposta_info">
+                                    <div>
+                                        <input type="text" name="familia" id="familia" placeholder="Tag1">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="filo" id="filo" value="" placeholder="tag2">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="n_cientifio" id="n_cientifico" value="" placeholder="tag3">
+                                    </div>
+                                </div>
+
+                                <div class="resposta_text">
+                                    <textarea rows="10" name="comment" id="comment" placeholder="Descrçao detalhada"></textarea>
+                                </div>
+                                <div>
+                                    <input class="resposta_submit" type="file" name="'image" value="image">
+                                    <button  class="resposta_submit" type="submit" name="submit" value="Perguntar">Perguntar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </body>
+</html>
