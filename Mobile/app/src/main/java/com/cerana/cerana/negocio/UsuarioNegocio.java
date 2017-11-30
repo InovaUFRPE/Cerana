@@ -6,7 +6,9 @@ import android.widget.Toast;
 
 import com.cerana.cerana.dao.UsuarioDao;
 import com.cerana.cerana.dominio.Pessoa;
+import com.cerana.cerana.dominio.Topico;
 import com.cerana.cerana.dominio.Usuario;
+import com.cerana.cerana.dao.TopicoDao;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +16,7 @@ import java.util.regex.Pattern;
 public class UsuarioNegocio {
     private Context context;
     private UsuarioDao usuarioDao;
+    private TopicoDao topicoDao;
     private Pattern p1 = Pattern.compile("\\S+");
     private Pattern p2 = Pattern.compile("^[A-Za-z0-9]+$");
     private Matcher m;
@@ -99,5 +102,11 @@ public class UsuarioNegocio {
         } else {
             return true;
         }
+    }
+
+    public void inserirTopico(Topico topico){
+        topicoDao = new TopicoDao(context);
+        topicoDao.inserirTopico(topico);
+        Toast.makeText(context, "Publicação inserida", Toast.LENGTH_LONG).show();
     }
 }

@@ -41,5 +41,11 @@ public class TelaInicialActivity extends AppCompatActivity {
         finish();
     }
 
+    public void criarPublicacaoActivity(View view){
+        startActivity(new Intent(this, CriarPublicacaoActivity.class));
+    }
+
+
+
 
 }

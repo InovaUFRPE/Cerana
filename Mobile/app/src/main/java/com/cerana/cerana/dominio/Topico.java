@@ -4,7 +4,7 @@ public class Topico {
     private String titulo;
     private String texto;
     private int id;
-    private Usuario usuario;
+    private int idUsuario;
     private String dataHora;
 
     public String getTitulo(){
@@ -31,12 +31,12 @@ public class Topico {
         this.id = id;
     }
 
-    public Usuario getUsuario(){
-        return usuario;
+    public int getIdUsuario(){
+        return idUsuario;
     }
 
-    public void setUsuario(Usuario usuario){
-        this.usuario = usuario;
+    public void setIdUsuario(int idUsuario){
+        this.idUsuario = idUsuario;
     }
 
     public String getDataHora() {

@@ -20,7 +20,7 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText et_user ;
     private EditText et_password ;
     private EditText et_password2 ;
-    private EditText et_nome ;
+    private EditText et_nome;
 
     private Resources resources;
     private UsuarioNegocio usuarioNegocio;

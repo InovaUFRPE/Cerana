@@ -23,7 +23,7 @@ public class TopicoDao {
         ContentValues values = new ContentValues();
 
         String colunaIdUser = DbHelper.TOPICO_ID_USER;
-        int idUser = topico.getUsuario().getId();
+        int idUser = topico.getIdUsuario();
         values.put(colunaIdUser, idUser);
 
         String colunaTitulo = DbHelper.TITULO_TOPICO;
