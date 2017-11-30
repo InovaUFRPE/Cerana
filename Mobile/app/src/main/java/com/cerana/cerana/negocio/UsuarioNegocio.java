@@ -79,7 +79,7 @@ public class UsuarioNegocio {
         String texto = campo;
         if (verEspacosBrancos(campo));
 
-        if  (texto.length() < 1 || texto.length() > 50){
+        if  (texto.length() < 3 || texto.length() > 50){
             return false;
         } else {
             return true;

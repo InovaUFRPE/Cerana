@@ -117,7 +117,12 @@ public class CadastroActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(nome) || nome.trim().isEmpty()) {
             et_nome.requestFocus();
             et_nome.setError(resources.getString(R.string.error_campo_vazio));
-        } else if (TextUtils.isEmpty(login)) {
+        }
+        if (!usuarioNegocio.verificarTamanhoNome(nome)){
+            et_nome.requestFocus();
+            et_nome.setError("Quantidade de caracteres não permitido.");
+        }
+        else if (TextUtils.isEmpty(login)) {
             et_user.requestFocus(); // troca ordem
             et_user.setError(resources.getString(R.string.error_campo_vazio));
         } else if (TextUtils.isEmpty(senha)) {
@@ -158,4 +163,3 @@ public class CadastroActivity extends AppCompatActivity {
         return  verificador;
     }
 }
-

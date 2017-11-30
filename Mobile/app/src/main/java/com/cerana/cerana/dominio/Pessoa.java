@@ -6,7 +6,6 @@ public class Pessoa{
     private String nome;
     private String localizazao;
     private String descricao;
-    private String userNome;
 
 
     public int getId() {

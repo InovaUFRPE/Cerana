@@ -50,7 +50,7 @@ public class SqlScripts {
         topicoBuilder.append(ID_TOPICO + " integer primary key autoincrement, ");
         topicoBuilder.append(TITULO_TOPICO + " text not null, ");
         topicoBuilder.append(TEXTO_TOPICO + " text not null, ");
-        topicoBuilder.append(DATA_TOPICO + " text not null, ");
+        topicoBuilder.append(DATA_TOPICO + " text, ");
         topicoBuilder.append(TOPICO_ID_USER + " integer);");
         return topicoBuilder.toString();
     }

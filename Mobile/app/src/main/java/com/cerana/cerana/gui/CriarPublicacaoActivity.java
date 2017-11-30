@@ -91,7 +91,6 @@ public class CriarPublicacaoActivity extends AppCompatActivity {
     public void inserirPublicacao(View v) throws Exception{
         boolean validar = validarCampos();
         if (validar){
-            sessaoUsuario = new SessaoUsuario(getApplicationContext());
             Topico topico = new Topico();
 
             topico.setTexto(et_texto.getText().toString());
@@ -103,9 +102,4 @@ public class CriarPublicacaoActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
-
 }

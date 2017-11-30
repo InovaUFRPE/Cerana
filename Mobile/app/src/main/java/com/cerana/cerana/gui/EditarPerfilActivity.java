@@ -67,11 +67,18 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
     public void editar(View v) throws Exception {
         usuarioDao = new UsuarioDao(getApplicationContext());
+        usuarioNegocio = new UsuarioNegocio(getApplicationContext());
         Pessoa pessoa = sessaoUsuario.getUsuarioLogado();
+
         if (!isCamposValidos(etEditarNome.getText().toString())) {
-            pessoa.setNome(etEditarNome.getText().toString());
+            if (!usuarioNegocio.verificarTamanhoNome(etEditarNome.getText().toString())) {
+                etEditarNome.requestFocus();
+                etEditarNome.setError("Quantidade de caracteres não permitido.");
+            } else {
+                pessoa.setNome(etEditarNome.getText().toString());
+            }
         }
-        if (!isBioValida(etEditarBio.getText().toString())){
+        if (!isBioValida(etEditarBio.getText().toString())) {
             pessoa.setDescricao(etEditarBio.getText().toString());
             usuarioDao.atualizarRegistro(pessoa);
             startActivity(new Intent(this, PerfilActivity.class));
@@ -90,14 +97,13 @@ public class EditarPerfilActivity extends AppCompatActivity {
         return verificador;
     }
 
-    public boolean isBioValida(String bio){
+    public boolean isBioValida(String bio) {
         usuarioNegocio = new UsuarioNegocio(getApplicationContext());
         boolean verficador = true;
-        if(usuarioNegocio.verificarTamanhoBio(bio) == verficador){
+        if (usuarioNegocio.verificarTamanhoBio(bio) == verficador) {
             etEditarBio.requestFocus();
             etEditarBio.setError("Limite máximo de caracteres ultrapassado.");
-        }
-        else{
+        } else {
             verficador = false;
         }
         return verficador;
