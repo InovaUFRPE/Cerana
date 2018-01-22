@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Cerana - Editar Perfil</title>
+		
+		<!-- jquery - link cdn -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+		<script type="text/javascript"></script>
+	
+	</head>
+
+	<body>
+
+		<!-- Navbar -->
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	        </div>
+	        
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="/dashboard">Voltar para Home</a></li>
+	          </ul>
+	        </div><!--onde o nav morre -->
+	      </div>
+	    </nav>
+
+
+
+
+
+	    <div class="container">
+	    	
+	    	<div class="container">
+	    	<div class="col-md-2 col-md-offset-1">
+	    		<div class="panel panel-default">
+	    			<div class="panel-body">
+	    				<div class="col-md-12">
+	    					<img class="img_profile" width="90px" height="90px" src="avatar.jpg"> <v<br/>
+	    				</div>
+
+
+
+	    			<!--	<div class="col-md-12">
+	    					<br>
+	    					<a href="#"><span class="navigation_item" color="#000000"></span>Notificações</a><br />
+	    				</div> -->
+	    				<div class="col-md-12">
+	    					<br>
+	    					<a href="#"><span class="navigation_item" color="#000000"></span>Banco</a><br /> <!--Botar a variavel aqui -->
+	    				</div>
+	    				<div class="col-md-12">
+	    					<br>
+	    					<a href="../questions"><span class="navigation_item" color="#000000"></span>Perguntas</a><br /> <!--Botar a variavel aqui -->
+	    				</div>
+	    				<div class="col-md-12">
+	    					<br>
+	    					<a href="../profile"><span class="navigation_item" color="#000000"></span>Perfil</a><br /> <!--Botar a variavel aqui -->
+	    				</div>
+	    				<div class="col-md-12">
+	    					<br>
+	    					<a href="#"><span class="navigation_item" color="#000000"></span>Pessoas</a><br /><!--Botar a variavel aqui -->
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+
+	    	<div class="col-md-9"></div>
+
+	    	<div class="col-md-2 ">
+
+	    		<h3>Meu Perfil</h3>
+	    	</div>
+
+	    	<dir class="col-md-2">
+	    		<button type="submit" class="btn btn-primary form-control">Confirmar</button>
+	    	</dir>
+	    	<dir class="col-md-2">
+	    		<button type="submit" class="btn btn-primary form-control">Excluir Perfil</button>
+	    	</dir>
+
+
+
+
+	    	<div class="col-md-6">
+	    		<br />
+	    		<!-- forma de post os dados do usuario e como usando o action -->
+				<form method="post" action="" id="formEditar">
+					<div class="form-group">
+						<input type="text" class="form-control" id="nomeC" name="nomeC" placeholder="Nome Completo" required="requiored">
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="dataN" name="dataN" placeholder="Data de Nascimento" required="requiored">
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="grad" name="grad" placeholder="Graduação" required="requiored">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" id="tel" name="tel" placeholder="Telefone" required="requiored">
+					</div>
+					
+					
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+
+			<div class="clearfix"></div>
+			<br />
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+
+		</div>
+
+
+	    </div>
+	
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	</body>
+</html>

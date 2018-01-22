@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+{% include 'nav.html' %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Cadastrar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bootstrap_login/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../static/bootstrap_login/css/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="POST" action="{{ url_for('register')}}">
+        {{  form.hidden_tag ()  }} 
+      <img class="mb-4" src="../../static/img/cerana_black_100x100.png" alt="" width="100" height="100">
+         {{  form.email(type="email", id="email", class="form-control", placeholder="Email", required="autofocus") }}
+         {{ form.first_name(type="string", id="first_name", class="form-control", placeholder="Nome", required="required") }}
+         {{ form.last_name(type="string", id="last_name", class="form-control", placeholder="Sobrenome", required="required") }}
+         {{ form.password(type="password", id="password", class="form-control", placeholder="Senha", required="required") }}
+         {{ form.confirm_password(type="password", id="confirm_password", class="form-control", placeholder="Confirmar Senha", required="required") }}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </body>
+</html>

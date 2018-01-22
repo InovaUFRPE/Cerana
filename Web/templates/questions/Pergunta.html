@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile</title>
+        <!-- Última versão CSS compilada e minificada -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Tema opcional -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Última versão JavaScript compilada e minificada -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/profile_style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+
+
+            <!-- Navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/dashboard">Voltar para Home</a></li>
+              </ul>
+            </div><!--onde o nav morre -->
+          </div>
+        </nav>
+            
+            <div class="container">
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <img class="img_profile" width="90px" height="90px" src="avatar.jpg"> <v<br/>
+                        </div>
+
+
+
+                    <!--    <div class="col-md-12">
+                            <br>
+                            <a href="#"><span class="navigation_item" color="#000000"></span>Notificações</a><br />
+                        </div> -->
+                        <div class="col-md-12">
+                            <br>
+                            <a href="/dashboard"><span class="navigation_item" color="#000000"></span>Home</a><br /> <!--Botar a variavel aqui -->
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <a href="#"><span class="navigation_item" color="#000000"></span>Banco</a><br /> <!--Botar a variavel aqui -->
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <a href="../profile"><span class="navigation_item" color="#000000"></span>Perfil</a><br /> <!--Botar a variavel aqui -->
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <a href="#"><span class="navigation_item" color="#000000"></span>Pessoas</a><br /><!--Botar a variavel aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="content_panel col-md-10">
+                            <div class="content_header_wrapper" class="bg-info">
+                                <h2 class="title" align="center">Minhas Questões</h2>
+                                <div class="actions col-md-offset-10">
+                                    <button type="button" class="btn btn-primary" id="btn_new_question"><i class="btn_text">
+                                        </i> Nova Questão</button>
+                                </div>
+                            </div>
+
+                            <div class="perguntas_list_view">
+                                <div class="table_responsive_wrapper">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="type"></th>
+                                            <th class="perguntas">Pergunta</th>
+                                            <th class="data">Data</th>
+                                            <th class="respostas">Respostas</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>                                    <tr>
+                                            <td class="type"><i class="pergunta_item"></i></td>
+                                            <td class="perguntas"><a href="#">pergunta</a></td>
+                                            <td class="data">Sep 23, 2015</td>
+                                            <td class="respostas">18</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

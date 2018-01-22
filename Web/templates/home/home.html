@@ -1,0 +1,89 @@
+
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Cerana Home</title>
+		
+		<!-- jquery - link cdn -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+		<script type="text/javascript"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Static navbar -->
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	        </div>
+	        
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+				<li><a href="">Perfil</a></li>
+				<li><a href="">Banco</a></li>
+	            <li><a href="">Sair</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+
+
+	    <div class="container">
+	    	<div class="col-md-3">
+	    		<div class="panel panel-default">
+	    			<div class="panel-body">
+	    				<div class="col-md-6">
+	    					Perguntas <br /> <!--Botar a variavel aqui -->
+	    				</div>
+	    				<div class="col-md-6">
+	    					Respostas <br /> <!--Botar a variavel aqui -->
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	
+	    	<div class="col-md-6">
+	    		<div class="panel panel-default">
+	    			<div class="panel-body">
+	    				<form id="form_tweet" class="input-group">
+	    					<input type="text" id="Pesquisa_pergunta" name="Pesquisa_pergunta" class="form-control" placeholder="Que pergunta deseja pesquisar?" maxlength="140" />
+	    					<span class="input-group-btn">
+	    						<button class="btn btn-default" id="btn_pesquisa" type="button">Pesquisar</button>
+	    					</span>
+	    				</form>
+	    			</div>
+	    		</div>
+
+	    		<div id="perguntas" class="list-group"></div>
+
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+                        <h4><a href="procurar_especialistas.php">Procurar por especialistas</a></h4>
+                            
+					</div>
+				</div>
+			</div>
+		</div>
+
+    
+      
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>
